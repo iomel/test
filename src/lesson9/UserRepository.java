@@ -13,7 +13,7 @@ public class UserRepository {
 
     public String[] getUserNames()
     {
-        String nameList = new String[users.length];
+        String[] nameList = new String[users.length];
         for(int i = 0; i < users.length; i++)
             nameList[i] = users[i].getName();
         return nameList;
@@ -21,7 +21,7 @@ public class UserRepository {
 
     public long[] getUserIds()
     {
-        long idList = new long[users.length];
+        long[] idList = new long[users.length];
         for(int i = 0; i < users.length; i++)
             idList[i] = users[i].getId();
         return idList;
