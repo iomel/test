@@ -1,4 +1,4 @@
-package lwsson8.accounts;
+package lesson8.accounts;
 
 public class SavingAccount extends Account {
     int savingPerMonth;

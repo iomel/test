@@ -1,4 +1,4 @@
-package lwsson8.accounts;
+package lesson8.accounts;
 
 public class Demo {
     public static void main(String[] args) {

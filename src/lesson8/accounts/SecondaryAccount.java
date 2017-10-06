@@ -1,4 +1,4 @@
-package lwsson8.accounts;
+package lesson8.accounts;
 
 public class SecondaryAccount extends CheckingAccount {
     public SecondaryAccount(String bankName, String ownerName, int moneyAmount, int limitOfExpeses) {
