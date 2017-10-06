@@ -13,23 +13,23 @@ public class UserRepository {
 
     public String[] getUserNames()
     {
-        String[] nameList = new String[users.length];
-        for(int i = 0; i < users.length; i++)
-            nameList[i] = users[i].getName();
+        String[] nameList = new String[getUsers().length];
+        for(int i = 0; i < getUsers().length; i++)
+            nameList[i] = getUsers()[i].getName();
         return nameList;
     }
 
     public long[] getUserIds()
     {
-        long[] idList = new long[users.length];
-        for(int i = 0; i < users.length; i++)
-            idList[i] = users[i].getId();
+        long[] idList = new long[getUsers().length];
+        for(int i = 0; i < getUsers().length; i++)
+            idList[i] = getUsers()[i].getId();
         return idList;
     }
 
     public String getUserNameById(long id)
     {
-        for(User user : users)
+        for(User user : getUsers())
             if(user.getId() == id)
                 return user.getName();
 
