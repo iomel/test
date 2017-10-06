@@ -2,14 +2,14 @@ package lesson8.accounts.students;
 
 public class Demo {
 
-    SpecialStudent createHighestParent()
+    public static Student createHighestParent()
     {
 
-        return new SpecialStudent("Vasya", "Pupkin", 312, null, 222333222, "specstud@gmail.com");
+        return new Student("Vasya", "Pupkin", 312, null);
     }
 
-    Student createLowestChild ()
+    public static SpecialStudent createLowestChild ()
     {
-        return new Student("Ferdya", "Lozhkin", 313, null);
+        return new SpecialStudent("Ferdya", "Lozhkin", 313, null, 222333222, "specstud@gmail.com");
     }
 }
