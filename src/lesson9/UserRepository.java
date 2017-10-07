@@ -1,5 +1,7 @@
 package lesson9;
 
+import javax.jws.soap.SOAPBinding;
+
 public class UserRepository {
     private User[] users;
 
@@ -15,28 +17,65 @@ public class UserRepository {
     {
         if (users == null || users.length == 0)
             return null;
-        String[] nameList = new String[getUsers().length];
-        for(int i = 0; i < getUsers().length; i++)
-            nameList[i] = getUsers()[i].getName();
+        String[] nameList = new String[users.length];
+        for(int i = 0; i < users.length; i++)
+            nameList[i] = users[i].getName();
         return nameList;
+
+
     }
 
     public long[] getUserIds()
     {
-        long[] idList = new long[getUsers().length];
-        for(int i = 0; i < getUsers().length; i++)
-            idList[i] = getUsers()[i].getId();
+        long[] idList = new long[users.length];
+        for(int i = 0; i < users.length; i++)
+            idList[i] = users[i].getId();
         return idList;
     }
 
     public String getUserNameById(long id)
     {
-        for(User user : getUsers())
+        for(User user : users)
             if(user.getId() == id)
                 return user.getName();
 
         return "No such user";
     }
 
+    public User getUserByName(String name)
+    {
+        if (users == null || users.length == 0)
+            return null;
+
+        for(User user : users)
+            if(user.getName() == name)
+                return user;
+
+        return null;
+    }
+
+    public User getUserById(long id)
+    {
+        if (users == null || users.length == 0)
+            return null;
+
+        for(User user : users)
+            if(user.getId() == id)
+                return user;
+
+        return null;
+    }
+
+    public User getUserBySessionId(String sessionId)
+    {
+        if (users == null || users.length == 0)
+            return null;
+
+        for(User user : users)
+            if(user.getSessionId() == sessionId)
+                return user;
+
+        return null;
+    }
 
 }
