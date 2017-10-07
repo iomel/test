@@ -17,12 +17,10 @@ public class UserRepository {
         String[] nameList = new String[users.length];
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null)
-                return null;
+                nameList[i] = null;
             nameList[i] = users[i].getName();
         }
         return nameList;
-
-
     }
 
     public long[] getUserIds()
@@ -33,7 +31,7 @@ public class UserRepository {
         long[] idList = new long[users.length];
         for(int i = 0; i < users.length; i++) {
             if (users[i] == null)
-                return null;
+                continue;
             idList[i] = users[i].getId();
         }
          return idList;
@@ -46,7 +44,7 @@ public class UserRepository {
 
         for (User user : users) {
             if (user == null)
-                return null;
+                continue;
             if (user.getId() == id)
                 return user.getName();
         }
