@@ -140,4 +140,40 @@ public class UserRepository {
         return null;
     }
 
+    // ------ Task 5 -------
+
+    public User update(User user)
+    {
+        if (users == null)
+            return null;
+        if(user == null)
+            return null;
+
+        if (findById(user.getId()) == null)
+            return null;
+
+
+        for (int i = 0; i < users.length; i++)
+        {
+            if(users[i] != null) {
+                if(users[i].getId() == user.getId());
+                {
+                    users[i] = user;
+                    return users[i];
+                }
+            }
+        }
+        return null;
+
+    }
+
+    public void delete(long id)
+    {
+        if(findById(id) != null)
+            for (int i = 0; i < users.length; i++)
+                if(users[i] != null)
+                    if(users[i].getId() == id)
+                        users[i] = null;
+
+    }
 }
