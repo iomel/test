@@ -99,4 +99,34 @@ public class UserRepository {
         { return null; }
     }
 
+    // task 4 methods
+
+    private User findById(long id)
+    {
+        if (users == null || users.length == 0 )
+            return null;
+
+        for(User user : users) {
+            if (user == null)
+                return null;
+
+            if (user.getId() == id)
+                return user;
+        }
+        return null;
+    }
+
+    public User save(User user)
+    {
+        if(findById(user.getId()) != null)
+            return null;
+
+        for (User u : users)
+        {
+            if(u = null)
+                u = user;
+            break;
+        }
+        return user;
+    }
 }
