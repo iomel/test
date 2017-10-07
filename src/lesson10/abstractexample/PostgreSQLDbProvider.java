@@ -1,6 +1,6 @@
 package lesson10.abstractexample;
 
-public class PostgreSQLProvider extends DbProvider{
+public class PostgreSQLDbProvider extends DbProvider{
 
     void connectToDb()
     {}
