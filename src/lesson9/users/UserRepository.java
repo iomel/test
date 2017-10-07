@@ -105,7 +105,7 @@ public class UserRepository {
 
     // --------- Task 4 ----------
 
-    private User findById(long id)
+    public User findById(long id)
     {
         if (users == null)
             return null;
