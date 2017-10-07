@@ -1,6 +1,4 @@
-package lesson9;
-
-import javax.jws.soap.SOAPBinding;
+package lesson9.users;
 
 public class UserRepository {
     private User[] users;

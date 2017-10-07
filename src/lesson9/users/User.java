@@ -1,4 +1,4 @@
-package lesson9;
+package lesson9.users;
 
 public class User {
     private long id;
