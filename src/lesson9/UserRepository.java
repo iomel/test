@@ -13,6 +13,8 @@ public class UserRepository {
 
     public String[] getUserNames()
     {
+        if (users == null || users.length == 0)
+            return null;
         String[] nameList = new String[getUsers().length];
         for(int i = 0; i < getUsers().length; i++)
             nameList[i] = getUsers()[i].getName();
