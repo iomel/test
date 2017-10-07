@@ -65,7 +65,7 @@ public class UserRepository {
 
     public User getUserById(long id)
     {
-        if (users == null || users.length == 0  || id == null)
+        if (users == null || users.length == 0 )
             return null;
 
         for(User user : users) {
