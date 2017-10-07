@@ -118,7 +118,7 @@ public class UserRepository {
 
     public User save(User user)
     {
-        if(findById(user.getId()) != null)
+        if(findById(user.getId()).getId() == user.getId())
             return null;
 
         for (User u : users)
