@@ -71,4 +71,72 @@ public class UserRepository {
         return null;
     }
 
+    // task 3 methods
+
+    public User getUserByName(String name)
+    {
+        if (users == null ||  name == null)
+            return null;
+
+        for(User user : users) {
+            if (user == null)
+                continue;
+            if (user.getName() == name)
+                return user;
+        }
+        return null;
+    }
+
+
+    public User getUserBySessionId(String sessionId)
+    {
+            if (users == null || sessionId == null)
+                return null;
+
+            for (User user : users) {
+                if (user == null)
+                    continue;
+
+                if (user.getSessionId() == sessionId)
+                    return user;
+            }
+            return null;
+    }
+
+    // --------- Task 4 ----------
+
+    public User findById(long id)
+    {
+        if (users == null)
+            return null;
+
+        for(User user : users) {
+            if (user == null)
+                continue;
+
+            if (user.getId() == id)
+                return user;
+        }
+        return null;
+    }
+
+    public User save(User user)
+    {
+        if (users == null)
+            return null;
+        if(user == null)
+            return null;
+
+        if (findById(user.getId()) != null)
+            return null;
+
+        for(User us : users)
+            if(us == null)
+            {
+                us = user;
+                return user;
+            }
+        return null;
+    }
+
 }
