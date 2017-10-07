@@ -18,8 +18,6 @@ public class UserRepository {
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null)
                 return null;
-            if (users[i].getName() == null)
-                return null;
 
             nameList[i] = users[i].getName();
         }
@@ -59,7 +57,7 @@ public class UserRepository {
             return null;
 
         for(User user : users) {
-            if (user == null || user.getName() == null)
+            if (user == null)
                 return null;
             if (user.getName() == name)
                 return user;
