@@ -86,13 +86,13 @@ public class UserRepository {
             return null;
 
         for(User user : users) {
-//            if (user == null)
-//                return null;
+            if (user == null)
+                return null;
 
             if (user.getSessionId() == sessionId)
                 return user;
         }
-        return new User;
+        return new User();
     }
 
 }
