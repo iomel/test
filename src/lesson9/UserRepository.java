@@ -13,13 +13,16 @@ public class UserRepository {
         return users;
     }
 
-    public String[] getUserNames()
-    {
+    public String[] getUserNames() {
         if (users == null || users.length == 0)
             return null;
         String[] nameList = new String[users.length];
-        for(int i = 0; i < users.length; i++)
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] == null)
+                return null;
+
             nameList[i] = users[i].getName();
+        }
         return nameList;
 
 
@@ -28,17 +31,23 @@ public class UserRepository {
     public long[] getUserIds()
     {
         long[] idList = new long[users.length];
-        for(int i = 0; i < users.length; i++)
+        for(int i = 0; i < users.length; i++) {
+            if (users[i] == null)
+                return null;
+
             idList[i] = users[i].getId();
-        return idList;
+        }
+         return idList;
     }
 
-    public String getUserNameById(long id)
-    {
-        for(User user : users)
-            if(user.getId() == id)
-                return user.getName();
+    public String getUserNameById(long id) {
+        for (User user : users) {
+            if (user == null)
+                return null;
 
+            if (user.getId() == id)
+                return user.getName();
+        }
         return "No such user";
     }
 
@@ -47,10 +56,12 @@ public class UserRepository {
         if (users == null || users.length == 0)
             return null;
 
-        for(User user : users)
-            if(user.getName() == name)
+        for(User user : users) {
+            if (user == null)
+                return null;
+            if (user.getName() == name)
                 return user;
-
+        }
         return null;
     }
 
@@ -59,10 +70,13 @@ public class UserRepository {
         if (users == null || users.length == 0)
             return null;
 
-        for(User user : users)
-            if(user.getId() == id)
-                return user;
+        for(User user : users) {
+            if (user == null)
+                return null;
 
+            if (user.getId() == id)
+                return user;
+        }
         return null;
     }
 
@@ -71,10 +85,13 @@ public class UserRepository {
         if (users == null || users.length == 0)
             return null;
 
-        for(User user : users)
-            if(user.getSessionId() == sessionId)
-                return user;
+        for(User user : users) {
+            if (user == null)
+                return null;
 
+            if (user.getSessionId() == sessionId)
+                return user;
+        }
         return null;
     }
 
