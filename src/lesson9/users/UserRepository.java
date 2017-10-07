@@ -105,7 +105,7 @@ public class UserRepository {
 
     // --------- Task 4 ----------
 
-    public User findById(long id)
+    private User findById(long id)
     {
         if (users == null)
             return null;
@@ -130,12 +130,13 @@ public class UserRepository {
         if (findById(user.getId()) != null)
             return null;
 
-        for(User us : users)
-            if(us == null)
-            {
-                us = user;
-                return user;
+        for (int i = 0; i < users.length; i++)
+        {
+            if(users[i] == null) {
+                users[i] = user;
+                return users[i];
             }
+        }
         return null;
     }
 
