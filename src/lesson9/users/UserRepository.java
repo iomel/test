@@ -57,7 +57,7 @@ public class UserRepository {
             return null;
 
         for(User user : users) {
-            if (user == null)
+            if (user == null || user.getName() == null)
                 return null;
             if (user.getName() == name)
                 return user;
@@ -86,13 +86,13 @@ public class UserRepository {
             return null;
 
         for(User user : users) {
-            if (user == null)
+            if (user == null || user.getSessionId() == null)
                 return null;
 
             if (user.getSessionId() == sessionId)
                 return user;
         }
-        return new User();
+        return null;
     }
 
 }
