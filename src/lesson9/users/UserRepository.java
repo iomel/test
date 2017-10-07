@@ -12,13 +12,12 @@ public class UserRepository {
     }
 
     public String[] getUserNames() {
-        if (users == null || users.length == 0)
+        if (users == null)
             return null;
         String[] nameList = new String[users.length];
         for (int i = 0; i < users.length; i++) {
             if (users[i] == null)
                 return null;
-
             nameList[i] = users[i].getName();
         }
         return nameList;
@@ -28,21 +27,26 @@ public class UserRepository {
 
     public long[] getUserIds()
     {
+        if (users == null)
+            return null;
+
         long[] idList = new long[users.length];
         for(int i = 0; i < users.length; i++) {
             if (users[i] == null)
                 return null;
-
             idList[i] = users[i].getId();
         }
          return idList;
     }
 
     public String getUserNameById(long id) {
+
+        if (users == null)
+            return null;
+
         for (User user : users) {
             if (user == null)
                 return null;
-
             if (user.getId() == id)
                 return user.getName();
         }
@@ -53,7 +57,7 @@ public class UserRepository {
 
     public User getUserByName(String name)
     {
-        if (users == null || users.length == 0 || name == null)
+        if (users == null ||  name == null)
             return null;
 
         for(User user : users) {
@@ -67,7 +71,7 @@ public class UserRepository {
 
     public User getUserById(long id)
     {
-        if (users == null || users.length == 0 )
+        if (users == null)
             return null;
 
         for(User user : users) {
@@ -84,7 +88,7 @@ public class UserRepository {
     {
         try {
 
-            if (users == null || users.length == 0 || sessionId == null)
+            if (users == null || sessionId == null)
                 return null;
 
             for (User user : users) {
@@ -103,22 +107,12 @@ public class UserRepository {
 
     private User findById(long id)
     {
-        if (users == null || users.length == 0 )
-            return null;
-
-        for(User user : users) {
-            if (user == null)
-                return null;
-
-            if (user.getId() == id)
-                return user;
-        }
-        return null;
+        return getUserById(id);
     }
 
     public User save(User user)
     {
-        if (user == null)
+        if (user == null || users == null)
             return null;
         if(findById(user.getId()) == user)
             return null;
