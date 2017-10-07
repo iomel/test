@@ -49,6 +49,8 @@ public class UserRepository {
         return "No such user";
     }
 
+    // task 3 methods
+
     public User getUserByName(String name)
     {
         if (users == null || users.length == 0) //|| name == null)
@@ -84,8 +86,8 @@ public class UserRepository {
             return null;
 
         for(User user : users) {
-            if (user == null)
-                return null;
+//            if (user == null)
+//                return null;
 
             if (user.getSessionId() == sessionId)
                 return user;
