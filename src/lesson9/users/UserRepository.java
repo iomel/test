@@ -51,7 +51,7 @@ public class UserRepository {
 
     public User getUserByName(String name)
     {
-        if (users == null || users.length == 0)
+        if (users == null || users.length == 0 || name == null)
             return null;
 
         for(User user : users) {
@@ -65,7 +65,7 @@ public class UserRepository {
 
     public User getUserById(long id)
     {
-        if (users == null || users.length == 0)
+        if (users == null || users.length == 0  || id == null)
             return null;
 
         for(User user : users) {
@@ -80,7 +80,7 @@ public class UserRepository {
 
     public User getUserBySessionId(String sessionId)
     {
-        if (users == null || users.length == 0)
+        if (users == null || users.length == 0  || sessionId == null)
             return null;
 
         for(User user : users) {
