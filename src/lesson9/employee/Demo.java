@@ -12,7 +12,7 @@ public class Demo {
         company.name = "IBM";
 
         Checker checker = new Checker();
-        checker.
+
 
     }
 }

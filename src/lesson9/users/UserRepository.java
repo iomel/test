@@ -53,7 +53,7 @@ public class UserRepository {
 
     public User getUserByName(String name)
     {
-        if (users == null || users.length == 0) //|| name == null)
+        if (users == null || users.length == 0 || name == null)
             return null;
 
         for(User user : users) {
@@ -82,17 +82,21 @@ public class UserRepository {
 
     public User getUserBySessionId(String sessionId)
     {
-        if (users == null || users.length == 0) //  || sessionId == null)
-            return null;
+        try {
 
-        for(User user : users) {
-            if (user == null || user.getSessionId() == null)
+            if (users == null || users.length == 0 || sessionId == null)
                 return null;
 
-            if (user.getSessionId() == sessionId)
-                return user;
-        }
-        return null;
+            for (User user : users) {
+                if (user == null || user.getSessionId() == null)
+                    return null;
+
+                if (user.getSessionId() == sessionId)
+                    return user;
+            }
+            return null;
+        } catch (NullPointerException e)
+        { return null; }
     }
 
 }
