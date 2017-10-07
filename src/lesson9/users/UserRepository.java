@@ -112,6 +112,8 @@ public class UserRepository {
     {
         if (user == null || users == null)
             return null;
+        if (findById(user.getId() == null))
+            return null;
         if(findById(user.getId()) == user)
             return null;
 
