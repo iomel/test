@@ -118,6 +118,8 @@ public class UserRepository {
 
     public User save(User user)
     {
+        if (user == null)
+            return null;
         if(findById(user.getId()) == user)
             return null;
 
