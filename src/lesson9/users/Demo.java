@@ -15,7 +15,6 @@ public class Demo {
         System.out.println(uR.getUserByName("Gena"));
         System.out.println(uR.getUserBySessionId("ppppp "));
 
-        User
 
     }
 }
