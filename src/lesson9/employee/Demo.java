@@ -12,6 +12,8 @@ public class Demo {
         company.name = "IBM";
 
         Checker checker = new Checker();
+        System.out.println(checker.checkCompanyName(company.name));
+        System.out.println(checker.companyNamesValidatedCount);
 
 
     }
