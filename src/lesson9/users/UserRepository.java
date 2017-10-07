@@ -123,7 +123,7 @@ public class UserRepository {
 
         for (User u : users)
         {
-            if(u = null)
+            if(u == null)
                 u = user;
             break;
         }
