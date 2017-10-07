@@ -11,10 +11,11 @@ public class Demo {
         System.out.println(Arrays.toString(uR.getUserNames()));
         System.out.println(Arrays.toString(uR.getUserIds()));
 
+       /*
         System.out.println(uR.getUserById(1111));
         System.out.println(uR.getUserByName("Gena"));
         System.out.println(uR.getUserBySessionId("ppppp "));
 
-
+*/
     }
 }

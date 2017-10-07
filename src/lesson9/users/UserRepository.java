@@ -7,19 +7,30 @@ public class UserRepository {
         this.users = users;
     }
 
+    //----- TASK 2 ---------------------
+
     public User[] getUsers() {
         return users;
     }
 
-    public String[] getUserNames() {
+    public String[] getUserNames()
+    {
         if (users == null)
             return null;
-        String[] nameList = new String[users.length];
-        for (int i = 0; i < users.length; i++) {
-            if (users[i] == null)
-                continue;
-            nameList[i] = users[i].getName();
-        }
+        int count = 0;
+        for(User user : users)
+            if(user != null)
+                count++;
+
+        String[] nameList = new String[count];
+        count = 0;
+
+        for(User user : users)
+            if(user != null) {
+                nameList[count] = user.getName();
+                count++;
+            }
+
         return nameList;
     }
 
@@ -27,102 +38,37 @@ public class UserRepository {
     {
         if (users == null)
             return null;
+        int count = 0;
+        for(User user : users)
+            if(user != null)
+                count++;
 
-        long[] idList = new long[users.length];
-        for(int i = 0; i < users.length; i++) {
-            if (users[i] == null)
-                continue;
-            idList[i] = users[i].getId();
-        }
-         return idList;
-    }
+        long[] idList = new long[count];
+        count = 0;
 
-    public String getUserNameById(long id) {
-
-        if (users == null)
-            return null;
-
-        for (User user : users) {
-            if (user == null)
-                continue;
-            if (user.getId() == id)
-                return user.getName();
-        }
-        return "No such user";
-    }
-
-    // task 3 methods
-
-    public User getUserByName(String name)
-    {
-        if (users == null ||  name == null)
-            return null;
-
-        for(User user : users) {
-            if (user == null)
-                return null;
-            if (user.getName() == name)
-                return user;
-        }
-        return null;
-    }
-
-    public User getUserById(long id)
-    {
-        if (users == null)
-            return null;
-
-        for(User user : users) {
-            if (user == null)
-                return null;
-
-            if (user.getId() == id)
-                return user;
-        }
-        return null;
-    }
-
-    public User getUserBySessionId(String sessionId)
-    {
-        try {
-
-            if (users == null || sessionId == null)
-                return null;
-
-            for (User user : users) {
-                if (user == null || user.getSessionId() == null)
-                    return null;
-
-                if (user.getSessionId() == sessionId)
-                    return user;
+        for(User user : users)
+            if(user != null) {
+                idList[count] = user.getId();
+                count++;
             }
-            return null;
-        } catch (NullPointerException e)
-        { return null; }
+
+        return idList;
     }
 
-    // task 4 methods
-
-    private User findById(long id)
+    public String getUserNameById(long id)
     {
-        return getUserById(id);
-    }
-
-    public User save(User user)
-    {
-        if (user == null || users == null)
-            return null;
-        if (findById(user.getId() == null))
-            return null;
-        if(findById(user.getId()) == user)
+        if (users == null)
             return null;
 
-        for (User u : users)
+        for (User user : users)
         {
-            if(u == null)
-                u = user;
-            break;
+            if (user == null)
+                continue;
+            else if (user.getId() == id)
+                return user.getName();
+
         }
-        return user;
+        return null;
     }
+
 }
