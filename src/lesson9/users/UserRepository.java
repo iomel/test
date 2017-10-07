@@ -92,7 +92,7 @@ public class UserRepository {
             if (user.getSessionId() == sessionId)
                 return user;
         }
-        return null;
+        return new User;
     }
 
 }
