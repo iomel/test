@@ -31,8 +31,8 @@ public class ElectronicsOrder extends Order{
         double discount = 1;
         double totalPrice;
 
-        if (!isValid())
-            return;
+//        if (!isValid())
+//            return;
 
         if (getShipToCity() == "Киев" || getShipToCity() == "Одесса")
             shipment = 1.1;

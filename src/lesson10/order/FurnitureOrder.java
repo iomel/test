@@ -30,8 +30,8 @@ public class FurnitureOrder extends Order {
         double shipment;
         double totalPrice;
 
-        if (!isValid())
-            return;
+//        if (!isValid())
+//            return;
 
         if (getBasePrice() < 5000)
             shipment = 1.05;
