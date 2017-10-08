@@ -16,10 +16,8 @@ public class ElectronicsOrder extends Order{
         // Минимальная цена заказа 100. Так же имя клиента который делает заказ может быть любым, а пол только женским
         if (getBasePrice() >= 100 && getCustomerOwned().getGender() == "Женский")
             if (getShipFromCity() == "Киев" || getShipFromCity() == "Одесса" || getShipFromCity() == "Днепр" || getShipFromCity() == "Харьков" )
-                if (getShipToCity() == "Киев" || getShipToCity() == "Одесса" || getShipToCity() == "Днепр" || getShipToCity() == "Харьков" ) {
+                if (getShipToCity() == "Киев" || getShipToCity() == "Одесса" || getShipToCity() == "Днепр" || getShipToCity() == "Харьков" )
                     setDateConfirmed(new Date());
-                    setValid(true);
-                }
     }
 
     @Override
@@ -30,9 +28,6 @@ public class ElectronicsOrder extends Order{
         double shipment;
         double discount = 1;
         double totalPrice;
-
-//        if (!isValid())
-//            return;
 
         if (getShipToCity() == "Киев" || getShipToCity() == "Одесса")
             shipment = 1.1;

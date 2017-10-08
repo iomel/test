@@ -12,7 +12,7 @@ public abstract class Order {
     private int basePrice;
     private double totalPrice;
     private Customer customerOwned;
-    private boolean isValid;
+
 
     public Order(String itemName, Date dateCreated, String shipFromCity, String shipToCity, int basePrice, Customer customerOwned) {
         this.itemName = itemName;
@@ -21,7 +21,6 @@ public abstract class Order {
         this.shipToCity = shipToCity;
         this.basePrice = basePrice;
         this.customerOwned = customerOwned;
-        this.isValid = false;
     }
 
     abstract void validateOrder();
@@ -45,13 +44,6 @@ public abstract class Order {
         this.totalPrice = totalPrice;
     }
 
-    public boolean isValid() {
-        return isValid;
-    }
-
-    public void setValid(boolean valid) {
-        isValid = valid;
-    }
 
     public String getItemName() {
         return itemName;

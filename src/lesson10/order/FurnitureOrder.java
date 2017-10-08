@@ -15,31 +15,20 @@ public class FurnitureOrder extends Order {
         // Заказ возможен с городов: Киев, Львов и в любой город.
         // Минимальная цена заказа 500.
         // Так же имя клиента который делает заказ не может быть "Тест", а пол может быть любым
-        if (getBasePrice() >= 500 && getCustomerOwned().getName() != "Test")
+        if (getBasePrice() >= 500 && getCustomerOwned().getName() != "Тест")
             if (getShipFromCity() == "Киев" || getShipFromCity() == "Львов")
-                 {
                      setDateConfirmed(new Date());
-                     setValid(true);
-                 }
 
     }
 
     @Override
     void calculatePrice() {
         // Коммисия за доставку - 5% от суммы заказа если сумма меньше 5000 и 2% в других случаях
-        double shipment;
-        double totalPrice;
-
-//        if (!isValid())
-//            return;
 
         if (getBasePrice() < 5000)
-            shipment = 1.05;
+            setTotalPrice(getBasePrice() * 1.05);
         else
-            shipment = 1.02;
-
-        totalPrice = ( getBasePrice() * shipment );
-        setTotalPrice(totalPrice);
+            setTotalPrice(getBasePrice() * 1.02);
 
     }
 }
