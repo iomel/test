@@ -29,7 +29,7 @@ public abstract class Order {
 
     public void confirmShipping()
     {
-        if(dateShipped == null && isValid)
+        if(dateShipped == null)
             dateShipped = new Date();
     }
 
