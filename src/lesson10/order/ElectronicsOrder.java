@@ -35,14 +35,14 @@ public class ElectronicsOrder extends Order{
             return;
 
         if (getShipToCity() == "Киев" || getShipToCity() == "Одесса")
-            shipment = 0.1;
+            shipment = 1.1;
         else
-            shipment = 0.15;
+            shipment = 1.15;
 
         if (getBasePrice() > 1000)
             discount = 0.95;
 
-        totalPrice = ( getBasePrice() + getBasePrice() * shipment ) * discount;
+        totalPrice = ( getBasePrice() * shipment ) * discount;
         setTotalPrice(totalPrice);
     }
 }

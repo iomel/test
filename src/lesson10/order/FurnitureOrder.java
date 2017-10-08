@@ -33,10 +33,10 @@ public class FurnitureOrder extends Order {
         if (!isValid())
             return;
 
-        if (getBasePrice() > 5000)
-            shipment = 0.95;
+        if (getBasePrice() < 5000)
+            shipment = 1.05;
         else
-            shipment = 0.98;
+            shipment = 1.02;
 
         totalPrice = ( getBasePrice() * shipment );
         setTotalPrice(totalPrice);
