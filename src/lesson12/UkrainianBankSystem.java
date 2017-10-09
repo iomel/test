@@ -55,6 +55,8 @@ public class UkrainianBankSystem implements BankSystem {
 
     @Override
     public void paySalary(User user) {
+        if (user == null)
+            return;
         if ((user.getBalance() + user.getSalary() > user.getBank().getLimitOfFunding()))
             return;
         user.setBalance((user.getBalance() + user.getSalary()));
