@@ -44,6 +44,7 @@ public abstract class Bank {
         return bankCountry;
     }
 
+
     public void setBankCountry(String bankCountry) {
         this.bankCountry = bankCountry;
     }
@@ -60,7 +61,7 @@ public abstract class Bank {
         return numberOfEmployee;
     }
 
-    public void setNumberOfEmployee(int numberOfEmployee) {
+    public void setNumberOfEmployees(int numberOfEmployee) {
         this.numberOfEmployee = numberOfEmployee;
     }
 

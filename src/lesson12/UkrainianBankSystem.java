@@ -7,7 +7,7 @@ public class UkrainianBankSystem implements BankSystem {
 
         if (!checkWithdraw(user, amount))
             return;
-        user.setBalance(user.getBalance() - amount - user.getBank().getCommission(amount));
+        user.setBalance(user.getBalance() - amount - amount*user.getBank().getCommission(amount));
     }
 
     private boolean checkWithdraw(User user, int amount)
