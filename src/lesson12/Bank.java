@@ -5,16 +5,16 @@ public abstract class Bank {
     private long id;
     private String bankCountry;
     private Currency currency;
-    private int numberOfEmployee;
+    private int numberOfEmployees;
     double avrSalaryOfEmployee;
     private long rating;
     private long totalCapital;
 
-    public Bank(long id, String bankCountry, Currency currency, int numberOfEmployee, double avrSalaryOfEmployee, long rating, long totalCapital) {
+    public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         this.id = id;
         this.bankCountry = bankCountry;
         this.currency = currency;
-        this.numberOfEmployee = numberOfEmployee;
+        this.numberOfEmployees = numberOfEmployees;
         this.avrSalaryOfEmployee = avrSalaryOfEmployee;
         this.rating = rating;
         this.totalCapital = totalCapital;
@@ -27,7 +27,7 @@ public abstract class Bank {
     public abstract double getCommission (int amount);
 
     double moneyPaidMonthlyForSalary() {
-        return numberOfEmployee * avrSalaryOfEmployee;
+        return numberOfEmployees * avrSalaryOfEmployee;
     }
 
 
@@ -58,11 +58,11 @@ public abstract class Bank {
     }
 
     public int getNumberOfEmployees() {
-        return numberOfEmployee;
+        return numberOfEmployees;
     }
 
     public void setNumberOfEmployees(int numberOfEmployee) {
-        this.numberOfEmployee = numberOfEmployee;
+        this.numberOfEmployees = numberOfEmployee;
     }
 
     public double getAvrSalaryOfEmployee() {
