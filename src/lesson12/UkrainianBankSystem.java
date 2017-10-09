@@ -33,7 +33,7 @@ public class UkrainianBankSystem implements BankSystem {
 
     @Override
     public void fund(User user, int amount) {
-        if ((amount) > user.getBank().getLimitOfFunding())
+        if (amount > user.getBank().getLimitOfFunding())
             return;
         else
             user.setBalance(user.getBalance() + amount);
@@ -44,12 +44,10 @@ public class UkrainianBankSystem implements BankSystem {
     public void transferMoney(User fromUser, User toUser, int amount) {
         if (!checkWithdraw(fromUser, amount))
             return;
-        if ((toUser.getBalance() + amount - toUser.getBank().getCommission(amount)) > toUser.getBank().getLimitOfFunding())
+        if (amount > toUser.getBank().getLimitOfFunding())
             return;
         fromUser.setBalance(fromUser.getBalance() - amount - fromUser.getBank().getCommission(amount));
-        toUser.setBalance((toUser.getBalance() + amount - toUser.getBank().getCommission(amount)));
-
-
+        this.fund(toUser, amount);
 
     }
 
